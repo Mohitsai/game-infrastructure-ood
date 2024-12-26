@@ -1,0 +1,27 @@
+HERE ARE SOME IMPORTANT DESIGN DECISIONS TAKEN FOR LEGENDS OF VALOR :
+
+1. We decided to use the base project structure of Mohit Sai and include all the functionalities developed by Boqing that was developed for the previous game Legends : Monsters and Heroes
+
+2. Since each cell type has a different property in terms of how it looks and what it lends to the game play,
+   We decided to have classes for the different types of cells which all inherit common properties and methods from the parent class, Cell.
+   Therefore, we have the following new classes : BushCell, PlainCell, InaccessibleCell, CaveCell and Koulou Cell.
+   Also, as a bonus implementation this time we decided to colour the cells of our board, so the Cell has an additional property colour
+   We also have an additional Colour class to enable the colouring of cells that basically just contains the colour as final properties in the form of ANSI escape code strings.
+   Since the cell layout is different this time with space for two markers and different borders for different cell types :
+   They also have two new properties : Border and Cell Contents to track the same.
+
+
+3. The marker this time is a string and not just a character : To have both the type and number of character.
+
+4. Legends of Valor being an RPG game and a game, implements the interfaces Game and RolePlayingGame.
+   Therefore, it provides the concrete implementations of the method play, afterGame, initializeCharacters and initializeWorld.
+
+5. Character gets an additional property boardMark of type Mark to set the different types of mark a character can have on a board.
+   Each hero is named H0, H1 and H2 in the order that they are chosen by the user. The monsters as when they spawn are named M0, M1,....and so on.
+
+6. As per requirements, Hero gets additional functionalities in Recall and Teleport. Monster gets additional functionality in making a move if conditions for attacking aren't met.
+
+7. To make the game play more interesting, we decided to generate a random market each time hero wants to enter the market in their home nexus cell.
+   This way they don't really know what will be available. As we don't store the state of market (unlike the previous game), the player can always recall to home nexus and try their luck in purchasing items.
+
+8. Since we had most of the functionalities from our previous project, all we had to do was extend it to the legends of valor game to fit into it's world.
